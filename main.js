@@ -3,7 +3,7 @@ const textos = document.querySelectorAll(".aba-conteudo");
 
 for (let i = 0; i < botoes.length; i++) {
     botoes[i].onclick = function () {
-        for(let j =0; j < botoes.length; i++) {
+        for(let j = 0; j < botoes.length; j++) {
             botoes[j].classList.remove("ativo");
             textos[j].classList.remove("ativo");
         }
@@ -37,7 +37,6 @@ function calculaTempo(tempoObjetivo) {
     } else {
         return "Prazo finalizado.";
     }
-
 }
 
 function atualizarCronometro() {
@@ -48,8 +47,7 @@ function atualizarCronometro() {
 
 function comecaCronometro() {
     atualizarCronometro();
-    sentIntervavel(atualizarCronometro,1000);
+    setInterval(atualizarCronometro,1000);
 }
-
 
 comecaCronometro();
